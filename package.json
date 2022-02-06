@@ -9,7 +9,7 @@
     "dev": "parcel ./src/index.html",
     "prebuild": "npx rimraf build",
     "build:local": "parcel build --public-url ./ ./src/index.html --dist-dir build",
-    "build:github": "rm -rf docs/* && parcel build --public-url ./ ./src/index.html --dist-dir docs"
+    "build:github": "rm -rf docs/* && parcel build --public-url ./ ./src/index.html --dist-dir ./"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
