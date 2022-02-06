@@ -4,25 +4,32 @@ on:
   push:
     branches: [main]
 jobs:
-  build-gh-pages:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+
+      - name: Generate static VuePress files
+        uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: "16"
       - run: npm ci
-      - run: npm run build:github
-      - name: Commit files
-        id: auto-commit-action
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: build project for github pages
-      - name: Push changes
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        uses: ad-m/github-push-action@master
+      - run: npm run build
+
+      - name: Init new repo in dist folder and commit generated files
+        run: |
+          cd docs/.vuepress/dist
+          git init
+          git add -A
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'deploy'
+
+      - name: Force push to destination branch
+        uses: ad-m/github-push-action@v0.5.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: No changes detected
-        if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        run: echo "No changes!"
+          branch: gh-pages
+          force: true
+          directory: ./docs
