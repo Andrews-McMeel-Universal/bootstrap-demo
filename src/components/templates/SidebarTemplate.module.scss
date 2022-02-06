@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.side {
+  flex: 0 0 300px;
+}

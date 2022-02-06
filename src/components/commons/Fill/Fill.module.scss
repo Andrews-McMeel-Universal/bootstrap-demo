@@ -1,0 +1,9 @@
+.fill {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #e4e5e6;
+  &__dark {
+    background-color: #d4d5d6;
+  }
+}
