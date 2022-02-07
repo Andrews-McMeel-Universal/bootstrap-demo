@@ -5,7 +5,7 @@ const Row = ({ children, height, noGutters }) => {
   return (
     <div
       className={classNames("row", noGutters && "g-0")}
-      style={{ height: `${height}px` }}
+      style={{ height: `${height}px`, border: "1px solid #999" }}
     >
       {children}
     </div>
