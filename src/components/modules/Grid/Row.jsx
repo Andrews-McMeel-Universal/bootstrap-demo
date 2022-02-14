@@ -1,11 +1,7 @@
 import React, { useRef, useEffect, useContext } from "react";
 import classNames from "classnames";
 
-import { GridContext } from "./Grid";
-
 const Row = ({ children, height }) => {
-  const { gx } = useContext(GridContext);
-
   return (
     <div
       className={classNames(
