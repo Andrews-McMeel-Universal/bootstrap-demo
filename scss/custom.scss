@@ -5,6 +5,23 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+// REM conversion
+$font-size-reset: 62.5%; // 62.5% so that 1rem = 10px
+html {
+  font-size: $font-size-reset;
+}
+
+$spacer: 0.8rem !default;
+$grid-gutter-width: 1.2rem !default;
+
+$gutters: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
