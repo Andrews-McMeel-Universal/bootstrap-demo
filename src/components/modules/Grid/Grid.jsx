@@ -1,54 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 
-import GridContextProvider, { GridContext } from "./GridContext";
-
-// const Container = ({ children, fluid }) => {
-//   const { pX } = useContext(GridContext);
-
-//   return (
-//     <div
-//       className={classNames(
-//         fluid ? "container-fluid" : "container",
-//         pX && `px-${pX}`
-//       )}
-//       // style={{ border: "1px solid #999" }}
-//     >
-//       {children}
-//     </div>
-//   );
-// };
-
-// const Grid = ({ children, fluid }) => (
-//   <GridContextProvider>
-//     <Container fluid={fluid}>{children}</Container>
-//   </GridContextProvider>
-// );
-
-import React, { createContext, useState } from "react";
-import classNames from "classnames";
-
-const GridContext = createContext();
-
-const Grid = ({ children, fluid, gx }) => {
-  // const [columnPaddingX, setColumnPaddingX] = useState(null);
-
+const Grid = ({ children, fluid, gx, height }) => {
   return (
-    <GridContext.Provider value={{ gx }}>
+    <div
+      className={classNames(fluid ? "container-fluid" : "container")}
+      style={{ border: "1px solid #999" }}
+    >
       <div
         className={classNames(
-          fluid ? "container-fluid" : "container",
-          gx && `px-${gx - 1}`
+          "row",
+          gx && gx >= 1 && `gx-${gx}`,
+          gx === 0 && "g-0"
         )}
-        style={{ border: "1px solid #999" }}
+        style={{ height: `${height}px` }}
       >
         {children}
       </div>
-    </GridContext.Provider>
+    </div>
   );
 };
-
-export { GridContext };
-export default Grid;
 
 export default Grid;

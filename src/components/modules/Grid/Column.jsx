@@ -1,5 +1,8 @@
 import React from "react";
+import classNames from "classnames";
 
-const Column = ({ children }) => <div className="col-1">{children}</div>;
+const Column = ({ children, col }) => (
+  <div className={classNames(col && `col-${col}`)}>{children}</div>
+);
 
 export default Column;

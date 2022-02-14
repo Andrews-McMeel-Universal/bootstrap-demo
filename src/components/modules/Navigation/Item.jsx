@@ -13,6 +13,7 @@ const Item = ({ children, section }) => {
         section === activeSection && "active"
       )}
       onClick={() => setActiveSection(section)}
+      style={{ fontSize: "1.6rem" }}
     >
       {children}
     </button>

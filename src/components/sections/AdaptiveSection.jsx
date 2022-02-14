@@ -2,79 +2,66 @@ import React from "react";
 
 import Fill from "../../components/commons/Fill";
 import Grid from "../../components/modules/Grid";
-
-// import GridContextProvider from "../../components/modules/Grid/GridContext";
-
-// import Grid from "../../components/modules/Grid/GridContext";
+import Heading from "../commons/Heading";
 
 const AdaptiveSection = () => (
   <>
-    {/* <Grid>
-      <Grid.Row height={300}>
-        {[...Array(12)].map((e, i) => {
-          return (
-            <Grid.Column key={i}>
-              <Fill />
-            </Grid.Column>
-          );
-        })}
-      </Grid.Row>
+    <Grid>
+      <Grid.Column col={6}>
+        <Heading priority={2}>Gutters: 16px - Name: Grid Default</Heading>
+      </Grid.Column>
+    </Grid>
+    <Grid height={300}>
+      {[...Array(12)].map((e, i) => {
+        return (
+          <Grid.Column key={i} col={1}>
+            <Fill />
+          </Grid.Column>
+        );
+      })}
     </Grid>
     <Grid>
-      <Grid.Row height={300} gy={0} gx={4}>
-        {[...Array(12)].map((e, i) => {
-          return (
-            <Grid.Column key={i}>
-              <Fill />
-            </Grid.Column>
-          );
-        })}
-      </Grid.Row>
+      <Grid.Column col={12}>
+        <Heading priority={2}>Gutters: 12px - Name: Grid 3</Heading>
+      </Grid.Column>
+    </Grid>
+    <Grid gx={3} height={300}>
+      {[...Array(12)].map((e, i) => {
+        return (
+          <Grid.Column key={i} col={1}>
+            <Fill />
+          </Grid.Column>
+        );
+      })}
     </Grid>
     <Grid>
-      <Grid.Row height={300} gy={0} gx={5}>
-        {[...Array(12)].map((e, i) => {
-          return (
-            <Grid.Column key={i}>
-              <Fill />
-            </Grid.Column>
-          );
-        })}
-      </Grid.Row>
-    </Grid> */}
-    <Grid gx={5}>
-      <Grid.Row height={300}>
-        {[...Array(12)].map((e, i) => {
-          return (
-            <Grid.Column key={i}>
-              <Fill />
-            </Grid.Column>
-          );
-        })}
-      </Grid.Row>
+      <Grid.Column col={12}>
+        <Heading priority={2}>Gutters: 8px - Name: Grid: 2</Heading>
+      </Grid.Column>
     </Grid>
-    <Grid gx={4}>
-      <Grid.Row height={300}>
-        {[...Array(12)].map((e, i) => {
-          return (
-            <Grid.Column key={i}>
-              <Fill />
-            </Grid.Column>
-          );
-        })}
-      </Grid.Row>
+    <Grid gx={2} height={300}>
+      {[...Array(12)].map((e, i) => {
+        return (
+          <Grid.Column key={i} col={1}>
+            <Fill />
+          </Grid.Column>
+        );
+      })}
     </Grid>
-    {/* <Grid gx={5}>
-      <Grid.Row height={300}>
-        {[...Array(18)].map((e, i) => {
-          return (
-            <Grid.Column key={i}>
-              <Fill />
-            </Grid.Column>
-          );
-        })}
-      </Grid.Row>
-    </Grid> */}
+    <Grid>
+      <Grid.Column col={12}>
+        <Heading priority={2}>Gutters: 4px - Name: Grid 1</Heading>
+      </Grid.Column>
+    </Grid>
+    <Grid gx={1} height={300}>
+      {[...Array(12)].map((e, i) => {
+        return (
+          <Grid.Column key={i} col={1}>
+            <Fill />
+          </Grid.Column>
+        );
+      })}
+    </Grid>
   </>
 );
 

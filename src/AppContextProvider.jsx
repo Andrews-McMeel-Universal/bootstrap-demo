@@ -11,20 +11,12 @@ const AppContextProvider = ({ children }) => {
       label: "Adaptive",
     },
     {
-      key: "adaptive-no-gutters",
-      label: "Adaptive (No Gutters)",
-    },
-    {
       key: "adaptive-with-sidebar",
       label: "Adaptive with Sidebar",
     },
     {
       key: "responsive",
       label: "Responsive",
-    },
-    {
-      key: "responsive-no-gutters",
-      label: "Responsives (No Gutters)",
     },
     {
       key: "responsive-with-sidebar",
