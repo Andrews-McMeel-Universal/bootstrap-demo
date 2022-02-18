@@ -1,0 +1,11 @@
+// @import "src/scss/utilities";
+@import "../../../scss/custom.scss";
+
+:export {
+  var_breakpointXS: map-get($grid-breakpoints, "xs");
+  var_breakpointSM: map-get($grid-breakpoints, "sm");
+  var_breakpointMD: map-get($grid-breakpoints, "md");
+  var_breakpointLG: map-get($grid-breakpoints, "lg");
+  var_breakpointXL: map-get($grid-breakpoints, "xl");
+  var_breakpointXXL: map-get($grid-breakpoints, "xxl");
+}

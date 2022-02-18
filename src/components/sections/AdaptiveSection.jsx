@@ -1,17 +1,14 @@
 import React from "react";
 
+import useBreakpoint from "../../hooks/useBreakpoint";
+
 import Fill from "../../components/commons/Fill";
 import Grid from "../../components/modules/Grid";
 import Heading from "../commons/Heading";
 
 const AdaptiveSection = () => (
   <>
-    <Grid>
-      <Grid.Column col={6}>
-        <Heading priority={2}>Gutters: 16px - Name: Grid Default</Heading>
-      </Grid.Column>
-    </Grid>
-    <Grid height={300}>
+    <Grid height={300} mb={3}>
       {[...Array(12)].map((e, i) => {
         return (
           <Grid.Column key={i} col={1}>
@@ -20,43 +17,37 @@ const AdaptiveSection = () => (
         );
       })}
     </Grid>
-    <Grid>
-      <Grid.Column col={12}>
-        <Heading priority={2}>Gutters: 12px - Name: Grid 3</Heading>
-      </Grid.Column>
-    </Grid>
-    <Grid gx={3} height={300}>
-      {[...Array(12)].map((e, i) => {
+    <Grid height={300} mb={3}>
+      {[...Array(6)].map((e, i) => {
         return (
-          <Grid.Column key={i} col={1}>
+          <Grid.Column key={i} col={2}>
             <Fill />
           </Grid.Column>
         );
       })}
     </Grid>
-    <Grid>
-      <Grid.Column col={12}>
-        <Heading priority={2}>Gutters: 8px - Name: Grid: 2</Heading>
-      </Grid.Column>
-    </Grid>
-    <Grid gx={2} height={300}>
-      {[...Array(12)].map((e, i) => {
+    <Grid height={300} mb={3}>
+      {[...Array(4)].map((e, i) => {
         return (
-          <Grid.Column key={i} col={1}>
+          <Grid.Column key={i} col={3}>
             <Fill />
           </Grid.Column>
         );
       })}
     </Grid>
-    <Grid>
-      <Grid.Column col={12}>
-        <Heading priority={2}>Gutters: 4px - Name: Grid 1</Heading>
-      </Grid.Column>
-    </Grid>
-    <Grid gx={1} height={300}>
-      {[...Array(12)].map((e, i) => {
+    <Grid height={300} mb={3}>
+      {[...Array(3)].map((e, i) => {
         return (
-          <Grid.Column key={i} col={1}>
+          <Grid.Column key={i} col={4}>
+            <Fill />
+          </Grid.Column>
+        );
+      })}
+    </Grid>
+    <Grid height={300} mb={3}>
+      {[...Array(2)].map((e, i) => {
+        return (
+          <Grid.Column key={i} col={6}>
             <Fill />
           </Grid.Column>
         );
