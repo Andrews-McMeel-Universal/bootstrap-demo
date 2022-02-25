@@ -11,7 +11,9 @@ const SidebarTemplate = ({ children, fluid }) => {
   const isDesktop = useBreakpoint("desktop");
 
   return (
-    <div className={classNames(fluid ? "container-fluid" : "container")}>
+    <div
+      className={classNames(fluid ? "container-fluid" : "container", "px-0")}
+    >
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
         {isDesktop && (
